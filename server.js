@@ -15,7 +15,8 @@ mongoose.connect("mongodb+srv://avnish:avnish@cluster0.i8f770y.mongodb.net/myDB"
 
 app.get("/",(req,res)=>{
     res.setHeader("Access-Control-Allow-Credentials","true");
-})  
+    res.send("API is running...");
+});  
 
 app.post('/login', (req, res) => {
   const { email, password } = req.body;
