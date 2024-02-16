@@ -13,6 +13,10 @@ mongoose.connect("mongodb+srv://avnish:avnish@cluster0.i8f770y.mongodb.net/myDB"
 }).then(() => console.log("MongoDb Connection Successful"))
   .catch((error) => console.log(error.message));
 
+app.get("/",(req,res)=>{
+    res.setHeader("Access-Control-Allow-Credentials","true");
+})  
+
 app.post('/login', (req, res) => {
   const { email, password } = req.body;
   UserModel.findOne({ email: email }).then(user => {
